@@ -1,0 +1,22 @@
+<div [ngClass]="{class1: true}">
+  <h1 [ngClass]="{class2: true}">Date: </h1>
+  <p
+    *ngFor="
+    let item of items;
+    let i = index;"
+    [className]="'test-list'"
+  >{{item + ' index:' + i}}</p>
+  <div *ngIf="logged; then loggedIn; else loggedOut">
+
+  </div>
+  <ng-template #loggedIn>
+    Logged in
+  </ng-template>
+  <ng-template #loggedOut>
+    Login please
+  </ng-template>
+  <button (click)="toggleLogin($event)">Login</button>
+  <br>
+  <input type="text" [(ngModel)]="text">
+  <p>{{text}}</p>
+</div>
